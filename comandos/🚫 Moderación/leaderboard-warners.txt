@@ -1,0 +1,28 @@
+const warnSchema = require(`${process.cwd()}/modelos/warns.js`);
+const {asegurar_todo} = require(`${process.cwd()}/utils/funciones.js`)
+
+module.exports = {
+  name: "leaderboard-warners",
+  aliases: ["warners-g", "warners-server", "leader-warners"],
+  desc: "Muestra la tabla de clasificación de los usuarios que dieron más warns en el servidor",
+  run: async (client, message, args, prefix) => {
+    const usuario = message.guild.members.cache.get(args[0]) || message.mentions.members.filter(m => m.guild.id == message.guild.id).first() || message.member;
+        await asegurar_todo(message.guild.id, usuario.id)
+    if (!usuario) {
+      return message.reply("Usuario desconocido");
+    }
+    
+    await warnSchema.findOneAndUpdate(
+      { guildID: message.guild.id, userID: usuario.id },
+      { guildID: message.guild.id, userID: usuario.id, $push: { warnings: { warn: { autor: message.author.id, fecha: Date.now(), razon: razon } } } },
+      { upsert: true }
+    );
+  
+    if (warns.length === 0) {
+      return message.reply("No se encontraron datos para mostrar.");
+    }
+  
+    const leaderboardMessage = warns.map((warn, position) => `${position + 1}. <@${warn.autor}>: ${warn.count} warns`).join("\n");
+    message.reply(`Tabla de clasificación de los usuarios con más warns dados por el staff en el servidor:\n${leaderboardMessage}`);
+  },
+};

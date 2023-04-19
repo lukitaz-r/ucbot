@@ -1,0 +1,17 @@
+{
+    "token": "MTA4OTA1NzcxOTg2NjEwMTgwMQ.GmkC4b.e5lAl1czoRpsTCm4rrheMh8P-vFZOPGP3boOAw",
+    "prefix": "uc!",
+    "mongodb": "mongodb+srv://jajaja:holasas@botsardo.xu3du47.mongodb.net/?retryWrites=true&w=majority",
+    "ownerIDS": ["1052388988368990279", "251805603444424706", "981173136458408046"],
+    "color": "#ffc600",
+    "openai_key": "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",
+    "guild_id": "720394383425405018",
+    "bot_owner_id": "1052388988368990279",
+    "client_id": "1089057719866101801",
+    "engine": "text-davinci-002",
+    "base_prompt": "",
+    "cooldown_enabled": true,
+    "cooldown_time_mins": 0,
+    "cooldown_whitelist": [10],
+    "bot_status": "el Ultimo Circulo"
+}
