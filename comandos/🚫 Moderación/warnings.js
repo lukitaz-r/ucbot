@@ -10,7 +10,7 @@ module.exports = {
         await asegurar_todo(message.guild.id, usuario.id)
         let data = await warnSchema.findOne({guildID: message.guild.id, userID: usuario.id});
         if(data.warnings.length == 0) return message.reply(`✅ **\`${usuario.user.tag}\` no tiene ningún warning en el servidor!**`);
-        const texto = data.warnings.map((warn, index) => `================================\n**ID DE WARN:** \`${index}\`\n**FECHA:** <t:${Math.round(warn.fecha / 1000)}>\n**AUTOR:** <@${warn.autor}> *\`${message.guild.members.cache.get(warn.autor).user.tag}\`*\n**RAZÓN:** \`${warn.razon}\`\n`)
+        const texto = data.warnings.map((warn, index) => `================================\n**ID DE WARN:** \`${index}\`\n**FECHA:** <t:${Math.round(warn.fecha / 1000)}>\n**AUTOR:** <@${warn.autor}> \n**RAZÓN:** \`${warn.razon}\`\n`)
         paginacion(client, message, texto, `🛠 \`[${data.warnings.length}]\` WARNINGS DE ${usuario.user.tag}`, 1)
     }
 }
