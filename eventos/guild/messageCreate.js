@@ -12,7 +12,7 @@ module.exports = async (client, message) => {
         embeds: [
             new Discord.EmbedBuilder()
             .setTitle(`✅ **Para ver mis comandos usa \`${data.prefijo}help\`!**`)
-            .setFooter({text: `© desarrollado por ALEMAN#2136 | 2023`, iconURL: `https://images-ext-1.discordapp.net/external/T5EjeI21k8KpYT8mj9RkAxhsmqN1is3ID6EtG3N21Es/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/1052388988368990279/24ea075d629c602addedf9d041a213ac.png?width=691&height=691`})
+            .setFooter({text: `© desarrollado por lukitaz_r  | 2023`, iconURL: `https://images-ext-1.discordapp.net/external/T5EjeI21k8KpYT8mj9RkAxhsmqN1is3ID6EtG3N21Es/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/1052388988368990279/24ea075d629c602addedf9d041a213ac.png?width=691&height=691`})
             .setColor(client.color)
         ]
     })

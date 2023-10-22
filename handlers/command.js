@@ -4,7 +4,7 @@ module.exports = (client) => {
         console.log(`
 ╔═════════════════════════════════════════════════════╗
 ║                                                     ║
-║        Bienvenido al Handler  por  ALEMAN           ║
+║        Bienvenido al Handler  por  lukitaz_r        ║
 ║                                                     ║
 ╚═════════════════════════════════════════════════════╝`.yellow)
         let comandos = 0;
