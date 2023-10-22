@@ -10,9 +10,6 @@ module.exports = {
         let usuario = message.guild.members.cache.get(args[0]) || message.mentions.members.filter(m => m.guild.id == message.guild.id).first();
         if (!usuario) return message.reply(`❌ **No se ha encontrado al usuario que has especificado!**`);
 
-        let razon = args.slice(2).join(" ");
-        if(!razon) razon = "No se ha especificado ninguna razón!"
-
         let tiempo = args.slice(1).join(" ")
         if(tiempo == NaN || !tiempo) tiempo = 1
         let sas = "";
@@ -20,6 +17,9 @@ module.exports = {
         else if (tiempo == 1) sas = "minuto"
         
         let tempo = (tiempo * 60) * (10**3)
+
+        let razon = args.slice(2).join(" ");
+        if(!razon) razon = "No se ha especificado ninguna razón!"
 
         if(usuario.id == message.guild.ownerId) return message.reply(`❌ **No puedes mutear al DUEÑO del Servidor!**`);
         
