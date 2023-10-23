@@ -10,8 +10,11 @@ module.exports = {
         let usuario = message.guild.members.cache.get(args[0]) || message.mentions.members.filter(m => m.guild.id == message.guild.id).first();
         if (!usuario) return message.reply(`❌ **No se ha encontrado al usuario que has especificado!**`);
 
-        let tiempo = args.slice(1).join(" ")
-        if(tiempo == NaN || !tiempo) tiempo = 1
+        let tiempo = args[1]
+        parseInt(tiempo, 10)
+        if(isNaN(tiempo) || !tiempo || tiempo <= 0) { 
+            tiempo = 1
+        }
         let sas = "";
         if(tiempo > 1) sas = "minutos"; 
         else if (tiempo == 1) sas = "minuto"
