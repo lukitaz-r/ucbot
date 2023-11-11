@@ -11,7 +11,6 @@ module.exports = {
         if (!usuario) return message.reply(`❌ **No se ha encontrado al usuario que has especificado!**`);
 
         let tiempo = args[1]
-        parseInt(tiempo, 10)
         if(isNaN(tiempo) || !tiempo || tiempo <= 0) { 
             tiempo = 1
         }
@@ -28,23 +27,6 @@ module.exports = {
         
         if (message.guild.members.me.roles.highest.position > usuario.roles.highest.position) {
                     if (message.member.roles.highest.position > usuario.roles.highest.position) {
-                        usuario.send({embeds: [
-                            new Discord.EmbedBuilder()
-                            .setTitle(`Has sido muteado de __${message.guild.name}__`)
-                            .setDescription(`**Razón:** \n\`\`\`yml\n${razon}\`\`\``)
-                            .addFields([{name: `Razón`, value: `\n\`\`\`yml\n${tiempo} ${sas}\`\`\``}])
-                            .setColor(client.color)
-                            .setTimestamp()
-                        ]}).catch(() => {message.reply(`No se le ha podido enviar el DM al usuario!`)});
-
-                        message.reply({embeds: [new Discord.EmbedBuilder()
-                            .setTitle(`✅ Usuario muteado`)
-                            .setDescription(`**Se ha muteado exitosamente a \`${usuario.user.tag}\` *(\`${usuario.id}\`)***`)
-                            .addFields([{name: `Razón`, value: `\n\`\`\`yml\n${razon}\`\`\``}])
-                            .addFields([{name: `Tiempo`, value: `\n\`\`\`yml\n${tiempo} ${sas}\`\`\``}])
-                            .setColor(client.color)
-                            .setTimestamp()
-                            ]})
             
                             usuario.timeout(tempo, razon).catch(() => {
                                 return message.reply({embeds: 
@@ -53,6 +35,25 @@ module.exports = {
                                 .setColor("FF0000")
                                 ]})
                             });
+
+                            usuario.send({embeds: [
+                                new Discord.EmbedBuilder()
+                                .setTitle(`Has sido muteado de __${message.guild.name}__`)
+                                .setDescription(`**Razón:** \n\`\`\`yml\n${razon}\`\`\``)
+                                .addFields([{name: `Razón`, value: `\n\`\`\`yml\n${tiempo} ${sas}\`\`\``}])
+                                .setColor(client.color)
+                                .setTimestamp()
+                            ]}).catch(() => {message.reply(`No se le ha podido enviar el DM al usuario!`)});
+
+                            message.reply({embeds: [new Discord.EmbedBuilder()
+                                .setTitle(`✅ Usuario muteado`)
+                                .setDescription(`**Se ha muteado exitosamente a \`${usuario.user.tag}\` *(\`${usuario.id}\`)***`)
+                                .addFields([{name: `Razón`, value: `\n\`\`\`yml\n${razon}\`\`\``}])
+                                .addFields([{name: `Tiempo`, value: `\n\`\`\`yml\n${tiempo} ${sas}\`\`\``}])
+                                .setColor(client.color)
+                                .setTimestamp()
+                                ]})
+
                         } else {
                             return message.reply(`❌ **Tu Rol está por __debajo__ del usuario que quieres mutear!**`)
                         }

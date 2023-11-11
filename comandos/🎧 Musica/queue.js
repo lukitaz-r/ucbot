@@ -25,7 +25,7 @@ module.exports = {
             let desc = String(listaqueue[i]).substring(0, 2048); //Nos aseguramos de que la longitud del mensaje sea menor que 2048, para evitar errores.
             //Creamos un embed por cada 10 canciones
             let embed = new Discord.EmbedBuilder()
-                .setTitle(`🎶 Cola de ${message.guild.name} - \`[${queue.songs.length} ${queue.songs.length > 1 ? "Canciones" : "Canción"}]\``)
+                .setTitle(`🎶 Lista de reproducción de ${message.guild.name} - \`[${queue.songs.length} ${queue.songs.length > 1 ? "Canciones" : "Canción"}]\``)
                 .setColor("#8400ff")
                 .setDescription(desc)
             //Si la cantidad de canciones a mostrar es mayor a una, entonces especificamos en el embed, que canción se está reproduciendo en ese instante.
@@ -40,9 +40,9 @@ module.exports = {
             //Si la cantidad de embeds es solo 1, envíamos el mensaje tal cual sin botones
             if (embeds.length === 1) return message.channel.send({ embeds: [embeds[0]] }).catch(() => { });
             //Si el numero de embeds es mayor 1, hacemos el resto || definimos los botones.
-            let boton_atras = new Discord.ButtonBuilder().setStyle('Success').setCustomId('Atrás').setEmoji('929001012176507040').setLabel('Atrás')
+            let boton_atras = new Discord.ButtonBuilder().setStyle('Success').setCustomId('Atrás').setEmoji('⏪').setLabel('Atrás')
             let boton_inicio = new Discord.ButtonBuilder().setStyle('Danger').setCustomId('Inicio').setEmoji('🏠').setLabel('Inicio')
-            let boton_avanzar = new Discord.ButtonBuilder().setStyle('Success').setCustomId('Avanzar').setEmoji('929001012461707335').setLabel('Avanzar')
+            let boton_avanzar = new Discord.ButtonBuilder().setStyle('Success').setCustomId('Avanzar').setEmoji('⏩').setLabel('Avanzar')
             //Enviamos el mensaje embed con los botones
             let embedpaginas = await message.channel.send({
                 content: `**Haz click en los __Botones__ para cambiar de páginas**`,

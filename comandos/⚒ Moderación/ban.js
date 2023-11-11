@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 module.exports = {
     name: "ban",
-    aliases: ["banear", "banuser"],
+    aliases: ["banear", "banuser", "kill", "papear"],
     desc: "Sirve para banear a un usuario del Servidor",
     permisos: ["BanMembers"],
     permisos_bot: ["BanMembers"],
