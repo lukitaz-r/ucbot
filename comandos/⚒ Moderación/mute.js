@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 const  ms = require('ms')
 module.exports = {
     name: 'mute',
-    aliases: ['mutear', 'intenta-hablar', 'jajamuteao', 'timeout'],
+    aliases: ['mutear', 'intenta-hablar', 'jajamuteao', 'timeout', 'stfu'],
     desc: 'Comando para mutear a tal usuario por un determinado tiempo',
     permisos: ['BanMembers'],
     permisos_bot: ['BanMembers'],

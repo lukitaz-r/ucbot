@@ -4,7 +4,7 @@ const warnSchema = require(`${process.cwd()}/modelos/warns.js`);
 
 module.exports = {
   name: "leaderboard-warners",
-  aliases: ["warners-g", "warners-server", "leader-warners"],
+  aliases: ["warners-g", "warners-server", "leader-warners", "staff"],
   desc: "Muestra la tabla de clasificación de los usuarios que dieron más warns en el servidor",
   run: async (client, message, args, prefix) => {
     // Obtener todos los documentos de warnSchema
@@ -37,6 +37,6 @@ module.exports = {
     }).join("\n");
 
     // Enviar el mensaje con la tabla de líderes al canal
-    message.channel.send(`Tabla de líderes de usuarios con más warnings:\n${leaderboard}`);
+    message.channel.send(`Los staff que dieron mas warns en el servidor:\n${leaderboard}`);
   },
 };
