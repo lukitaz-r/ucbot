@@ -37,6 +37,6 @@ module.exports = {
     }).join("\n");
 
     // Enviar el mensaje con la tabla de líderes al canal
-    message.channel.send(`Los staff que dieron mas warns en el servidor:\n${leaderboard}`);
+    message.channel.send(`🔥 Los staff que dieron mas warns en el servidor:\n${leaderboard}`);
   },
 };
