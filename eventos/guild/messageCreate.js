@@ -10,7 +10,7 @@ module.exports = async (client, message) => {
     //si el bot es mencionado, devolvemos un mensaje de respuesta indicando el prefijo establecido en el servidor
     if(message.content.includes(client.user.id) && config.koi.includes(message.author.id)){     
         return message.reply(config.mensajesKoi[Math.floor(Math.random() * config.mensajesKoi.length)]) 
-    } else { 
+    } else if (message.content.includes(client.user.id)) { 
         return message.reply(config.mensajes[Math.floor(Math.random() * config.mensajes.length)]) 
     }
 
