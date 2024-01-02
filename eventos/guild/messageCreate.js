@@ -8,8 +8,11 @@ module.exports = async (client, message) => {
     let data = await serverSchema.findOne({guildID: message.guild.id});
 
     //si el bot es mencionado, devolvemos un mensaje de respuesta indicando el prefijo establecido en el servidor
-    if(message.content.includes(client.user.id)) return message.reply(config.mensajes[Math.floor(Math.random() * config.mensajes.length)])
-    if(message.content.includes(client.user.id) && message.author.id == "695782595497295923") return message.reply(config.mensajesKoi[Math.floor(Math.random() * config.mensajesKoi.length)])
+    if(message.content.includes(client.user.id) && config.koi.includes(message.author.id)){     
+        return message.reply(config.mensajesKoi[Math.floor(Math.random() * config.mensajesKoi.length)]) 
+    } else { 
+        return message.reply(config.mensajes[Math.floor(Math.random() * config.mensajes.length)]) 
+    }
 
     if (!message.content.startsWith(data.prefijo)) return;
     const args = message.content.slice(data.prefijo.length).trim().split(" ");
