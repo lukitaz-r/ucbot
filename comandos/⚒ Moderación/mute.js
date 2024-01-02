@@ -2,7 +2,11 @@ const Discord = require('discord.js')
 const  ms = require('ms')
 module.exports = {
     name: 'mute',
+<<<<<<< HEAD
     aliases: ['mutear', 'intenta-hablar', 'jajamuteao', 'timeout', 'stfu', "callao"],
+=======
+    aliases: ['mutear', 'intenta-hablar', 'jajamuteao', 'timeout'],
+>>>>>>> parent of 48691ca (actualizaciones pequeñas)
     desc: 'Comando para mutear a tal usuario por un determinado tiempo',
     permisos: ['BanMembers'],
     permisos_bot: ['BanMembers'],

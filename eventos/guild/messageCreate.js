@@ -8,14 +8,8 @@ module.exports = async (client, message) => {
     let data = await serverSchema.findOne({guildID: message.guild.id});
 
     //si el bot es mencionado, devolvemos un mensaje de respuesta indicando el prefijo establecido en el servidor
-    if(message.content.includes(client.user.id)) return message.reply({
-        embeds: [
-            new Discord.EmbedBuilder()
-            .setTitle(`✅ **Para ver mis comandos usa \`${data.prefijo}help\`!**`)
-            .setFooter({text: `© desarrollado por lukitaz_r  | 2023`, iconURL: `https://images-ext-1.discordapp.net/external/T5EjeI21k8KpYT8mj9RkAxhsmqN1is3ID6EtG3N21Es/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/1052388988368990279/24ea075d629c602addedf9d041a213ac.png?width=691&height=691`})
-            .setColor(client.color)
-        ]
-    })
+    if(message.content.includes(client.user.id)) return message.reply(config.mensajes[Math.floor(Math.random() * config.mensajes.length)])
+    if(message.content.includes(client.user.id) && message.author.id.includes("695782595497295923")) return message.reply(config.mensajesKoi[Math.floor(Math.random() * config.mensajesKoi.length)])
 
     if (!message.content.startsWith(data.prefijo)) return;
     const args = message.content.slice(data.prefijo.length).trim().split(" ");
