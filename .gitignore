@@ -1,2 +1,4 @@
 node_modules
 package-lock.json
+cleanupWarns.js
+dbm.json

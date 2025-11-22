@@ -36,7 +36,7 @@ module.exports = client => {
             await interaction.reply({ content: "⌛ **Creando tu ticket... Porfavor espere**", ephemeral: true });
             //creamos el canal
             const channel = await interaction.guild.channels.create({
-                name: `ticket-${interaction.member.user.username}`.substring(0, 50),
+                name: `🎫│ticket-${interaction.member.user.username}`.substring(0, 50),
                 type: 0, // 0 == texto, 2 == voz, ... https://discord-api-types.dev/api/discord-api-types-v10/enum/ChannelType
                 parent: interaction.channel.parent ?? null,
                 permissionOverwrites: [
@@ -50,13 +50,10 @@ module.exports = client => {
                         id: interaction.user.id,
                         allow: ["ViewChannel"]
                     },
-                    //ROL ESPECIAL PARA QUE PUEDA VER LOS TICKETS
-                    /*
                     {
-                        id: "943494866070044722",
-                        allow: ["VIEW_CHANNEL"]
+                        id: "1373132705491058708",
+                        allow: ["ViewChannel"]
                     },
-                    */
                 ]
             });
             //enviamos la bienvenida en el ticket del usuario

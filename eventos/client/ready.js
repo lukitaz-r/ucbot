@@ -5,10 +5,7 @@ module.exports = client => {
 
     let palo = 53;
 
-    mongoose.connect(config.mongodb, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    }).then(() => {
+    mongoose.connect(config.mongodb).then(() => {
         console.log(`
 ╔═════════════════════════════════════════════════════╗
 ║                                                     ║

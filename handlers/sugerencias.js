@@ -27,7 +27,7 @@ module.exports = client => {
             let msg = await message.channel.send({
                 embeds: [
                     new Discord.EmbedBuilder()
-                        .setAuthor({ name: "Sugerencia de " + message.author.tag, iconURL: message.author.displayAvatarURL({ dynamic: true }) })
+                        .setAuthor({ name: "Sugerencia de " + message.author.tag, iconURL: message.author.displayavatarURL()({ dynamic: true }) })
                         .setDescription(`>>> ${message.content}`)
                         .addFields([
                             {name: `✅ Votos positivos`, value: "0 votos", inline: true},

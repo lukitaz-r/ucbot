@@ -38,7 +38,7 @@ module.exports = {
 
                             usuario.send({embeds: [
                                 new Discord.EmbedBuilder()
-                                .setTitle(`Has sido muteado de __${message.guild.name}__`)
+                                .setTitle(`Has sido muteado en __${message.guild.name}__`)
                                 .setDescription(`**Razón:** \n\`\`\`yml\n${razon}\`\`\``)
                                 .addFields([{name: `Razón`, value: `\n\`\`\`yml\n${tiempo} ${sas}\`\`\``}])
                                 .setColor(client.color)

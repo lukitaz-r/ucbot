@@ -1,4 +1,3 @@
-const { Client, GatewayIntentBits, EmbedBuilder} = require("discord.js");
 const Discord = require('discord.js');
 const config = require('./config/config.json')
 const fs = require('fs');
@@ -11,10 +10,9 @@ const client = new Discord.Client({
         Discord.GatewayIntentBits.MessageContent,
         Discord.GatewayIntentBits.GuildVoiceStates,
         Discord.GatewayIntentBits.GuildMessageReactions,
-        Discord.GatewayIntentBits.GuildEmojisAndStickers,
+        Discord.GatewayIntentBits.GuildExpressions,
     ],
     partials: [Discord.Partials.User, Discord.Partials.Channel, Discord.Partials.GuildMember, Discord.Partials.Message, Discord.Partials.Reaction]
-
 })
 
 client.commands = new Discord.Collection();

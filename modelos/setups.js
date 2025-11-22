@@ -5,7 +5,6 @@ const setupSchema = new mongoose.Schema({
     reaccion_roles: Array,
     sistema_tickets: {type: Object, default: {canal: "", mensaje: ""}},
     sugerencias: {type: String, default: ""},
-    niveles: {type: Object, default: {canal: "", mensaje: ""}},
     torneo: {type: Object, default: {canal: ""}},
 })
 

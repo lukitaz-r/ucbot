@@ -33,16 +33,16 @@ async function asegurar_todo(guildid, userid) {
     if (guildid && userid) {
         let warn_data = await warnSchema.findOne({ guildID: guildid, userID: userid });
         if (!warn_data) {
-          console.log(`Asegurado: Warnings de ${userid} en ${guildid}`.green);
-          warn_data = await new warnSchema({
-            guildID: guildid,
-            userID: userid,
-            warnings: [],
-          });
-          await warn_data.save();
+            console.log(`Asegurado: Warnings de ${userid} en ${guildid}`.green);
+            warn_data = await new warnSchema({
+                guildID: guildid,
+                userID: userid,
+                warnings: [],
+            });
+            await warn_data.save();
         }
-      }
     }
+}
 
 
 //definimos la funcion de paginación

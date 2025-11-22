@@ -6,8 +6,7 @@ module.exports = {
     aliases: ["warnear", "avisar"],
     desc: "Sirve para enviar un aviso a un usuario del Servidor",
     permisos: [ "BanMembers"],
-    permisos_bot: [
-         "BanMembers"],
+    permisos_bot: ["BanMembers"],
     run: async (client, message, args, prefix) => {
         //definimos la persona a avisar
         let usuario = message.guild.members.cache.get(args[0]) || message.mentions.members.filter(m => m.guild.id == message.guild.id).first();
@@ -28,7 +27,7 @@ module.exports = {
                 usuario.send({
                     embeds: [
                         new Discord.EmbedBuilder()
-                            .setTitle(`Has sido avisado de __${message.guild.name}__`)
+                            .setTitle(`Has sido warneado en __${message.guild.name}__`)
                             .setDescription(`**Razón:** \n\`\`\`yml\n${razon}\`\`\``)
                             .setColor(client.color)
                             .setTimestamp()
