@@ -167,7 +167,6 @@ Crea el archivo `config/config.json` con el siguiente contenido:
 | `allowedLinks` | Dominios permitidos en el automod | ❌ No |
 | `whitelistedChannels` | IDs de canales exentos del automod | ❌ No |
 | `privilegedRoleId` | IDs de roles exentos de sanciones | ❌ No |
-| `apiIa` | API Key de OpenAI (funcionalidad experimental) | ❌ No |
 
 ### 3. Configurar MongoDB
 
